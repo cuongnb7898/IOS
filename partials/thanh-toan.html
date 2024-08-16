@@ -1,0 +1,63 @@
+﻿<style>
+    .thanh-toan-vmn .banner {
+        background-color: #4CAF50;
+        /* Green color for success */
+        color: white;
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+        margin: 20px;
+    }
+
+    .thanh-toan-vmn  .icon {
+        font-size: 1.5em;
+        /* Adjust size of the icon */
+        margin-right: 10px;
+    }
+
+    .thanh-toan-vmn  .message {
+        font-size: 1.2em;
+        /* Adjust size of the message text */
+    }
+</style>
+<div class="bg-gray-web">
+    <div class="app-content bg-gray-web">
+        <div class="container-fluid page-profile" style="min-height: 60vh;">
+            <div class="thanh-toan-vmn">
+                <div class="thong-tin-truong">
+                    <div>
+                        <label>Phụ huynh</label><span style="width: 60%" class="ng-binding">{{DonHang.TenPhuHuynh}}</span>
+                    </div>
+                    <div>
+                        <label>Lớp học</label><span style="width: 60%" class="ng-binding">{{DonHang.TenLopHoc}}</span>
+                    </div>
+                    <div><label>Trường</label><span class="ng-binding">{{DonHang.TenTruongHoc}}</span></div>
+                    <div><label></label><span class="ng-binding">&nbsp; {{DonHang.TenPhongGD}}</span>
+                    </div>
+                    <br>
+                    <div><label style="width: 100%;">Mã đơn hàng</label><span class="ng-binding"> {{DonHang.MaDonHang}}</span>
+                    </div>
+                    <div><label style="width: 100%;">Số sách</label><span class="ng-binding"> {{DonHang.TongSoSach}}</span></div>
+                    <div><label style="width: 100%;">Tổng tiền</label><span class="ng-binding"
+                            style="    font-size: 16px; color: red;"> {{DonHang.TongTien | tien}} </span></div>
+                    <div><label style="width: 100%;"></label><span class="ng-binding" style="font-size: 12px; text-transform: uppercase; ">{{DonHang.StrTongSoSach}}  </span></div>
+                </div>
+                <br>
+                <div class="text-center">
+                    <a class="main-button btn-md " ng-click="thanhToanNgay()"
+                        ng-if="DonHang.Id && !DonHang.IsDaThanhToan">
+                        Thanh toán ngay
+                    </a>
+
+                    <div ng-if="DonHang.IsDaThanhToan">
+                        <div class="banner">
+                            <span class="icon">✔️</span>
+                            <span class="message">Đã thanh toán!</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

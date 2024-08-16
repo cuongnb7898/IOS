@@ -1,0 +1,1248 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Manrope:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&family=Saira:wght@400;700;800&display=swap");
+
+:root {
+    --color-primary: #2499BC;
+    --color-navy: #FFA344;
+    --color-default: #141212;
+}
+
+
+body {
+    color: #141212;
+    font-family: "Manrope";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.container:before,
+.container::after {
+    content: unset;
+}
+
+.gv-desktop {
+    display: none;
+}
+
+.show-mobile {
+    display: block;
+}
+
+/* button */
+
+.main-button {
+    display: inline-block;
+    margin-bottom: 12px;
+    line-height: normal;
+    color: #ffffff;
+    font-family: "Quicksand";
+    font-weight: 700;
+    font-size: 24px;
+    border-radius: 10px;
+    border-radius: 10px;
+    background: #00aecd;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    padding-left: 20px;
+    padding-right: 20px;
+    cursor: pointer;
+}
+
+.main-button:hover,
+.main-button:active,
+.main-button:focus {
+    background: var(--color-primary);
+    color: #fff;
+    text-decoration: none;
+}
+
+.main-button.outline {
+    background: #fff;
+    box-shadow: none;
+    color: var(--color-primary);
+    border: 1px solid #00aecd;
+}
+
+.main-button.btn-lg {
+    font-size: 30px;
+    height: 60px;
+    border-radius: 12px;
+    border-radius: 12px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.main-button.btn-md {
+    font-size: 22px;
+    border-radius: 8px;
+    border-radius: 8px;
+    padding-top: 7px;
+    padding-bottom: 9px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.main-button.btn-sm {
+    font-size: 16px;
+    border-radius: 5px;
+    border-radius: 5px;
+    padding-top: 5px;
+    padding-bottom: 7px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.main-button.btn-info {
+    background: #FFA344;
+}
+
+/* Header */
+.header {
+    background: #ffffff;
+    position: sticky;
+    top: 0;
+    z-index: 10000000;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 4px 8px 4px;
+}
+
+.header .nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.header .nav-left img {
+    height: 46px;
+}
+
+.header .btn-menu {
+    color: var(--color-primary);
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+.header .btn-menu.active {
+    color: var(--color-navy);
+}
+
+.header .btn-menu:hover,
+.header .btn-menu:focus {
+    background: #FFA34408;
+}
+
+.header .nav-right {
+    display: flex;
+    gap: 10px;
+}
+
+.header .nav-right .btn-menu {
+    padding: 7px;
+    overflow: hidden;
+}
+
+.header .nav-right .btn-menu img {
+    height: 32px;
+    width: 32px;
+}
+
+.header .nav-right .btn-menu img.avatar {
+    border-radius: 50%;
+}
+
+/* Footer */
+.box-footer {
+    background: #fff;
+    position: relative;
+    /* margin-top: 20px; */
+    /* padding-top: 20px; */
+}
+
+.box-footer .footer-logo {
+    width: 100%;
+    height: 300px;
+    color: #2499bc;
+    font-family: Saira;
+    font-size: 20px;
+    font-weight: 800;
+    text-align: center;
+    letter-spacing: -1.2px;
+    margin: auto;
+    align-items: center;
+    background-color: #cdf1f6;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+.box-footer .footer-logo img {
+    width: 230px;
+    padding: 7px;
+}
+
+.box-footer .footer-box-2 {
+    position: absolute;
+    width: 100%;
+    height: 200px;
+    background-color: #aae8f0;
+    top: 50px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+.box-footer .footer-content {
+    color: #fff;
+    font-family: Manrope;
+    font-size: 14px;
+    line-height: 2.5em;
+    position: absolute;
+    width: 100%;
+    min-height: 400px;
+    background-color: #006d8d;
+    padding: 23px;
+    top: 63px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+.box-footer .footer-content .line {
+    background-color: #fff;
+    height: 1px;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.box-footer .footer-content .footer-info {
+    min-width: 120px;
+    padding-top: 10px;
+}
+
+.box-footer .footer-content .footer-title {
+    font-family: Saira;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.box-footer .footer-content .footer-info img {
+    height: 22px;
+}
+
+.box-footer .footer-content a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.box-footer .footer-content .lien-he {
+    display: block;
+    font-size: 14px;
+    line-height: 2em;
+    padding-bottom: 50px;
+}
+
+
+.box-footer .lien-he>div {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.box-footer .footer-content .lien-he .box-title {
+    color: #fff;
+    font-family: Saira;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.box-footer .footer-content .lien-he .dieu-khoan a {
+    display: block;
+    padding-bottom: 10px;
+    font-size: 14px;
+}
+
+.box-footer .footer-content .lien-he .gioi-thieu a {
+    display: block;
+    padding-bottom: 10px;
+    font-size: 14px;
+}
+
+
+.box-footer .footer-content .lien-he .lien-ket a {
+    margin-right: 19px;
+}
+
+.box-footer .footer-content .lien-he .lien-ket img {
+    height: 30px;
+}
+
+
+/* Layout */
+.container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0;
+}
+
+.app-content {
+    width: 100%;
+    margin: auto;
+    font-size: 18px;
+}
+
+img {
+    max-width: 100%;
+}
+
+.gioi-thieu-he-thong {
+    font-size: 17px;
+    color: #585c5e;
+    font-family: "Manrope", sans-serif;
+    margin-top: 120px;
+    text-align: justify;
+    background: none;
+}
+
+.gioi-thieu-he-thong .content {
+    border-radius: 20px;
+    border: #28c2e1 solid 2px;
+    margin: auto;
+    position: relative;
+    padding: 40px;
+    border-radius: 25px;
+}
+
+.gioi-thieu-he-thong .content .title {
+    font-family: Saira;
+    position: absolute;
+    color: #28c2e1;
+    top: -30px;
+    left: 50%;
+    font-size: 39px;
+    transform: translateX(-50%);
+    height: 40px;
+    padding: 0 35px;
+    font-weight: bold;
+    background-color: #fff;
+    width: max-content;
+    background: #f6f6f6;
+}
+
+.gioi-thieu-he-thong .content .title::before {
+    content: "";
+    position: absolute;
+    background-color: #28c2e1;
+    height: 13px;
+    width: 13px;
+    left: -3px;
+    border-radius: 50%;
+    top: 23px;
+}
+
+.gioi-thieu-he-thong .content .title::after {
+    content: "";
+    position: absolute;
+    background-color: #28c2e1;
+    height: 13px;
+    width: 13px;
+    right: -3px;
+    border-radius: 50%;
+    top: 23px;
+}
+
+.gioi-thieu-he-thong .content .header {
+    position: static !important;
+    margin-bottom: 20px;
+    display: flex;
+    font-size: 22px;
+    background: none;
+}
+
+.gioi-thieu-he-thong .content .header .text {
+    width: 65%;
+}
+
+.gioi-thieu-he-thong .content .header .img-footer {
+    width: 35%;
+    padding: 0 30px;
+}
+
+.gioi-thieu-he-thong .content .footer {
+    display: flex;
+}
+
+.gioi-thieu-he-thong .content .footer .title-footer {
+    width: 70%;
+}
+
+.gioi-thieu-he-thong .content .footer .img-footer {
+    width: 30%;
+}
+
+.gioi-thieu-he-thong .content .footer .img-footer img {
+    width: 240px;
+}
+
+.thong-tin-lien-he {
+    font-size: 20px;
+    font-family: "Manrope", sans-serif;
+    margin-top: 50px;
+    margin-bottom: 35px;
+    color: #2499bc;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.thong-tin-lien-he a {
+    color: #2499bc;
+    text-decoration: none;
+}
+
+.thong-tin-lien-he .title {
+    margin: auto;
+    font-family: Saira;
+    color: #28c2e1;
+    font-size: 40px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.thong-tin-lien-he .ten-cong-ty {
+    font-size: 18px;
+    font-family: Saira;
+    font-weight: 600;
+    color: #28c2e1;
+    margin-bottom: 22px;
+}
+
+.thong-tin-lien-he .components {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.thong-tin-lien-he .components .box {
+    margin: 0 10px;
+    border: 1.4px solid #28c2e1;
+    border-radius: 10px;
+    flex: 1 1 calc(20% - 50px);
+}
+
+.thong-tin-lien-he .components .box img {
+    height: 35px;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.thong-tin-lien-he .components .box .title-box {
+    font-family: Saira;
+    font-size: 18px;
+    color: #28c2e1;
+    font-weight: bold;
+}
+
+.thong-tin-lien-he .components .box .content,
+.thong-tin-lien-he .components .box a {
+    color: #585c5e;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+.tinh-nang-noi-bat {
+    min-height: 220px;
+    display: flex;
+    font-size: 19px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.tinh-nang-noi-bat .content {
+    width: 50%;
+    padding: 15px;
+    text-align: left;
+}
+
+.tinh-nang-noi-bat .content .button {
+    color: #28c2e1;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: Saira;
+    padding-bottom: 15px;
+}
+
+.tinh-nang-noi-bat .content .text {
+    font-family: "Manrope", sans-serif;
+    text-align: left;
+    font-size: 22px;
+    line-height: 45px;
+    color: #585c5e;
+}
+
+.tinh-nang-noi-bat .content .text ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.tinh-nang-noi-bat .content .text ul li img {
+    height: 18px;
+    padding-right: 22px;
+}
+
+.tinh-nang-noi-bat .img {
+    width: 50%;
+    position: relative;
+}
+
+.tinh-nang-noi-bat .img img {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    object-fit: cover;
+}
+
+.avatar {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.page-profile {
+    width: 100%;
+    padding: 30px;
+    background: #fff;
+    border-radius: 20px;
+    margin: 30px;
+}
+
+.page-profile .sidebar {
+    width: 100%;
+}
+
+.page-profile .sidebar-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #00aecd;
+    margin-bottom: 20px;
+    padding-left: 15px;
+}
+
+.page-profile .list-group-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+}
+
+.page-profile .list-group-item i {
+    margin-right: 10px;
+    font-size: 18px;
+    color: #00aecd;
+    width: 25px;
+}
+
+.bg-gray-web {
+    background: #f6f6f6 !important;
+    padding: 3px 0;
+}
+.thong-tin-congty {
+    padding-right: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    display: inline-flex;
+    background: #f6f6f6;
+    margin-left: -30px;
+}
+.thong-tin-congty > .logo {
+    width: 24px;
+    height: 24px;
+    display: block;
+    float: left;
+    margin: 9px 10px 9px 12px;
+    border-radius: 50%;
+    background: #efefef;
+    border: 1px solid #747474;
+    overflow: hidden;
+}
+.thong-tin-congty > span {
+    height: 42px;
+    font-family: "Manrope";
+    color: #2499bc;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+.form-group {
+    margin-bottom: 8px;
+}
+.form-group label {
+    color: #2499bc;
+    transition: .3s;
+    background-color: none;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: normal;
+    z-index: 11;
+    padding: 0;
+    
+}
+.form-group input {
+    font-family: Manrope;
+    width: 100%;
+    height: 44px;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    outline: none;
+    background: #f6f6f6;
+    z-index: 1;
+    color: #4b5563;
+    letter-spacing: 2px;
+    box-shadow: none;
+}
+
+.thong-tin-chiendich {
+    margin-top: 18px;
+    margin-bottom: 18px;
+    cursor: pointer;
+}
+.thong-tin-chiendich .item-chiendich {
+    color: #2499bc;
+    font-family: Manrope;
+    font-size: 16px;
+    font-weight: 800;
+}
+.thong-tin-chiendich .item-chiendich > p {
+    color: #969696;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+}
+.box-malop {
+    height: 70px;
+    position: relative;
+}
+.box-malop .main-button {
+    font-size: 16px;
+}
+.box-malop .btn-chonlop {
+    position: absolute;
+    top: -15px;
+    right: 0;
+    z-index: 1000;
+}
+
+.thong-tin-truong {
+    padding: 15px 0 5px;
+    font-family: Manrope;
+}
+.thong-tin-truong h4 {
+    text-align: center;
+}
+.thong-tin-truong div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+    font-family: Manrope;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 22px;
+    color: #4b5563;
+}
+.thong-tin-truong div > label {
+    color: #2499bc;
+}
+.thong-tin-truong div > span {
+    width: 100%;
+    text-align: end;
+    border-bottom: 1px solid #f6f6f6;
+    margin-left: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #4b5563;
+}
+.thong-tin-truong ion-input {
+    --padding-top: 10px;
+}
+
+.text-thong-bao {
+    font-size: 14px;
+    font-family: Manrope;
+    font-weight: 600;
+    color: #969696;
+    margin: 6px 0;
+    text-align: right;
+}
+.modal {
+    z-index: 10000001;
+}
+
+.leaderboard {
+    max-width: 490px;
+    width: 100%;
+    border-radius: 6px;
+}
+.leaderboard header {
+    --start: 15%;
+    height: 90px;
+    background-image: repeating-radial-gradient(circle at var(--start), transparent 0%, transparent 10%, rgba(54, 89, 219, 0.33) 10%, rgba(54, 89, 219, 0.33) 17%), linear-gradient(to right, #5b7cfa, #3659db);
+    color: #fff;
+    position: relative;
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+}
+.leaderboard header .leaderboard__title {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    right: calc(var(--start) * 0.75);
+    transform: translateY(-50%);
+    text-transform: uppercase;
+    margin: 0;
+}
+.leaderboard header .leaderboard__title span {
+    display: block;
+}
+.leaderboard header .leaderboard__title--top {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 6.5px;
+}
+.leaderboard header .leaderboard__title--bottom {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 3.55px;
+    opacity: 0.65;
+    transform: translateY(-2px);
+}
+.leaderboard header .leaderboard__icon {
+    fill: #fff;
+    opacity: 0.35;
+    width: 50px;
+    position: absolute;
+    top: 50%;
+    left: var(--start);
+    transform: translate(-50%, -50%);
+}
+.leaderboard__profiles {
+    background-color: #fff;
+    border-radius: 0 0 12px 12px;
+    padding: 6px 6px 11px;
+    display: grid;
+    row-gap: 8px;
+    max-height: 62vh;
+    overflow-y: auto;
+}
+.leaderboard__profile {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    align-items: center;
+    padding: 5px;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 5px 7px -1px rgba(51, 51, 51, 0.23);
+    cursor: pointer;
+    transition: transform 0.25s cubic-bezier(0.7, 0.98, 0.86, 0.98), box-shadow 0.25s cubic-bezier(0.7, 0.98, 0.86, 0.98);
+    background-color: #fff;
+}
+.leaderboard__profile:hover {
+    background-color: #f0f0f0f5;
+}
+.leaderboard__picture {
+    max-width: 100%;
+    width: 45px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #ebeef3, 0 0 0 22px #f3f4f6;
+    padding: 5px;
+}
+.leaderboard__name {
+    color: #787d8f;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 0.64px;
+    margin-left: 6px;
+}
+.leaderboard__value {
+    color: #35d8ac;
+    font-weight: 700;
+    font-size: 34px;
+    text-align: right;
+}
+.leaderboard__value > span {
+    opacity: 1;
+    font-weight: 600;
+    font-size: 13px;
+    margin-left: 3px;
+}
+
+.leaderboard {
+    box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.4);
+}
+
+#loader-progress {
+    transform: translateX(-50%);
+    left: 50%;
+    width: max-content;
+    z-index: 10000003;
+}
+#loader {
+    z-index: 10000002;
+}
+
+@media (min-width: 576px) {
+
+    .container,
+    .app-content {
+        max-width: 540px;
+        border-radius: 20px;
+        font-size: 16px;
+    }
+
+    .page-profile {
+        width: 100%;
+        padding: 30px;
+        background: #fff;
+        border-radius: 20px;
+        margin: 30px;
+    }
+}
+
+@media (min-width: 768px) {
+    .form-group {
+        display: flex;
+        align-items: center ;
+    }
+    .box-malop .btn-chonlop {
+        top: -25px;
+    }
+    .form-group label {
+        width: 230px;
+    }
+    .container,
+    .app-content {
+        max-width: 720px;
+        border-radius: 20px;
+    }
+
+    .gv-desktop {
+        display: block;
+    }
+
+    .show-mobile {
+        display: none !important;
+    }
+
+    .gv-desktop .user-name {
+        color: #2499bc;
+        font-family: Manrope;
+        font-size: 16px;
+        font-weight: 600;
+        margin-right: 11px;
+    }
+
+    .gv-desktop .user-name p {
+        color: #9c9c9c;
+        font-size: 12px;
+    }
+
+    .gv-desktop .user-avatar {
+        width: 44px;
+        height: 44px;
+        cursor: pointer;
+        margin-left: 15px;
+    }
+
+    .header .nav-left {
+        gap: 20px;
+    }
+
+    .header .btn-menu {
+        padding: 12px 20px;
+    }
+
+    .box-footer {
+        background: #f6f6f6;
+    }
+
+    .box-footer .footer-logo {
+        border-top-left-radius: 100px;
+        border-top-right-radius: 100px;
+    }
+
+    .box-footer .footer-logo img {
+        width: 380px;
+        padding: 13px;
+    }
+
+    .box-footer .footer-box-2 {
+        top: 90px;
+        border-top-left-radius: 100px;
+        border-top-right-radius: 100px;
+    }
+
+    .box-footer .footer-content {
+        padding: 10px;
+        font-size: 18px;
+        top: 106px;
+        border-top-left-radius: 100px;
+        border-top-right-radius: 100px;
+    }
+
+    .box-footer .footer-content .footer-info {
+        padding-top: 60px;
+    }
+
+    .box-footer .footer-content .footer-title {
+        font-size: 27px;
+    }
+
+
+    .box-footer .footer-content .lien-he {
+        display: flex;
+        font-size: 16px;
+    }
+
+    .box-footer .footer-content .lien-he .box-title {
+        margin-bottom: 15px;
+    }
+
+    .box-footer .footer-content .lien-he .dieu-khoan {
+        width: 50%;
+    }
+
+    .box-footer .footer-content .lien-he .gioi-thieu {
+        width: 25%;
+    }
+
+    .box-footer .footer-content .lien-he .lien-ket {
+        width: 25%;
+    }
+
+}
+
+@media (min-width: 992px) {
+
+    .container,
+    .app-content {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+
+    .container-home {
+        width: 1200px;
+        padding-bottom: 30px;
+        margin: auto;
+
+    }
+}
+
+@media (min-width: 1366px) {
+    .container {
+        max-width: 1200px;
+    }
+}
+
+@media only screen and (max-width: 1159px) and (min-width: 650px) {
+
+    .grecaptcha-badge {
+        display: none !important;
+    }
+
+    .bg-gray-web {
+        background: #f6f6f6 !important;
+    }
+
+    .tinh-nang-noi-bat {
+        padding: 0 2% !important;
+        flex-direction: column-reverse;
+    }
+
+    .tinh-nang-noi-bat .content {
+        width: 100% !important;
+    }
+
+    .tinh-nang-noi-bat .content .button {
+        text-align: center;
+    }
+
+    .tinh-nang-noi-bat .content .text {
+        padding-left: 10px !important;
+    }
+
+    .tinh-nang-noi-bat .img {
+        width: 100% !important;
+        margin: 10px;
+        height: 180px;
+    }
+
+    .tinh-nang-noi-bat .img img {
+        height: 180px !important;
+    }
+
+    .gioi-thieu-he-thong,
+    .thong-tin-lien-he {
+        font-size: 80% !important;
+        padding: 0 2% !important;
+    }
+
+    .gioi-thieu-he-thong .content .title,
+    .thong-tin-lien-he .content .title {
+        font-size: 28px !important;
+    }
+
+    .gioi-thieu-he-thong .content .header {
+        display: block !important;
+    }
+
+    .gioi-thieu-he-thong .content .header .text,
+    .gioi-thieu-he-thong .content .header .img-footer {
+        width: 100% !important;
+    }
+
+    .gioi-thieu-he-thong .content .header .img-footer {
+        text-align: center !important;
+        padding: 10px;
+    }
+
+    .gioi-thieu-he-thong .content .header .img-footer img {
+        height: 300px;
+    }
+
+}
+
+@media only screen and (max-width: 649px) {
+    .show-mobile {
+        display: none !important;
+    }
+    .modal-dialog {
+        margin: 0 !important;
+        height: 100vh !important;
+    }
+    .home-page-button,
+    .auto-play .img-banner {
+        background-color: #eaf8fc !important;
+    }
+
+    .mobile-hide {
+        display: none !important;
+    }
+
+    .grecaptcha-badge {
+        display: none !important;
+    }
+
+    .bg-2 {
+        padding: 0% !important;
+    }
+
+    .form-container ion-button {
+        margin-top: 20px !important;
+    }
+
+    .tinh-nang-noi-bat {
+        font-size: 16px !important;
+        flex-direction: column-reverse !important;
+
+        .content {
+            padding: 0 !important;
+            width: 100% !important;
+
+            .text {
+                padding-left: 0 !important;
+                font-size: 15px !important;
+                line-height: 25px !important;
+
+                ul {
+                    padding-left: 5px !important;
+
+                    li img {
+                        height: 12px;
+                        padding-right: 15px;
+                    }
+                }
+            }
+
+            .button {
+                text-align: center;
+                font-size: 19px !important;
+            }
+        }
+
+        .img {
+            width: 100% !important;
+            height: 150px;
+            text-align: center;
+
+            img {
+                height: 156px !important;
+                padding: 0 30px !important;
+                object-fit: contain !important;
+            }
+        }
+    }
+
+    .gioi-thieu-he-thong {
+        padding: 0 !important;
+        margin-top: 40px;
+
+        .content {
+            padding: 20px !important;
+            width: calc(100% - 40px);
+        }
+
+        .title {
+            font-size: 19px !important;
+        }
+
+        .title::after {
+            top: 10px;
+        }
+
+        .header {
+            font-size: 15px !important;
+            display: block !important;
+
+            .text,
+            .img-footer {
+                width: 100% !important;
+            }
+
+            .img-footer img {
+                padding: 0 30px !important;
+            }
+        }
+
+        .footer {
+            font-size: 13.5px;
+            display: block !important;
+
+            .title-footer {
+                width: 100% !important;
+            }
+
+            .img-footer {
+                text-align: center !important;
+                width: 100% !important;
+            }
+        }
+    }
+
+
+    .thong-tin-lien-he {
+        padding: 0 !important;
+
+        .title {
+            font-size: 20px !important;
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+
+        .box {
+            flex: none !important;
+            min-width: 42% !important;
+            font-size: 13px !important;
+            border: none !important;
+            max-width: 60%;
+
+            img {
+                height: 30px !important;
+            }
+
+            .content,
+            a {
+                font-size: 14px !important;
+            }
+        }
+
+        .dia-chi {
+            width: 100% !important;
+        }
+    }
+
+    .page-profile {
+        width: 100%;
+        padding: 10px;
+        background: #fff;
+        border-radius: 0;
+        margin: 0;
+    }
+
+    .show-mobile {
+        display: block !important;
+    }
+
+    .box-tinhthanh {
+        div {
+            width: 170px !important;
+            font-size: 14px !important;
+        }
+    }
+
+    .box-footer {
+        background: #ffffff !important;
+
+        .footer-logo {
+            border-top-left-radius: 30px !important;
+            border-top-right-radius: 30px !important;
+
+            img {
+                width: 230px !important;
+                padding: 7px !important;
+            }
+        }
+
+        .footer-box-2 {
+            top: 50px !important;
+            border-top-left-radius: 30px !important;
+            border-top-right-radius: 30px !important;
+        }
+
+        .footer-content {
+            top: 63px !important;
+            border-top-left-radius: 30px !important;
+            border-top-right-radius: 30px !important;
+            padding: 23px !important;
+            font-size: 14px !important;
+
+            .footer-title {
+                font-size: 18px !important;
+            }
+        }
+
+        .lien-he {
+            display: block !important;
+            font-size: 14px !important;
+
+            .box-title {
+                font-size: 18px !important;
+                margin-bottom: 5px !important;
+            }
+        }
+
+        .lien-he>div {
+            width: 100% !important;
+            margin-top: 15px !important;
+        }
+    }
+    .thong-tin-congty {
+        margin-left: -6px;
+    }
+}

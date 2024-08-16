@@ -1,0 +1,338 @@
+﻿<link rel="stylesheet" href="/css/dat-sach.css" />
+<div class="bg-gray-web">
+  <div class="app-content bg-gray-web">
+    <div class="container-fluid page-profile" style="min-height: 740px">
+      <div class="thong-tin-congty">
+        <div class="logo">
+          <img src="https://cdn.trungtamsach.vn/static_cdn/TTS/c4ebe0f0-2710-430d-b552-7531ae43552c-icon.jpg" />
+        </div>
+        <span>{{mCongTy.Ten || 'Công ty phát hành'}}</span>
+      </div>
+
+      <div class="thong-tin-chiendich">
+        <div class="item-chiendich">
+          {{mChienDich.Ten}} &nbsp;
+          <p> {{mChienDich.Id ? 'Hạn cuối: ': ''}} {{mChienDich.NgayKTHocSinh | date: 'dd/MM/yyyy'}} &nbsp;</p>
+        </div>
+      </div>
+
+      <div>
+        <div class="form-group box-malop">
+          <label for="exampleInputEmail1">Nhập mã lớp</label>
+          <a class="main-button btn-sm btn-chonlop" data-toggle="modal" ng-click="openChonLopHoc()">
+            Chọn lớp học
+          </a>
+          <input class="form-control" id="malop" ng-model="mLopHoc.Ma" ng-model-options="{ debounce: 500 }"
+            placeholder="Nhập mã để tiến hành tìm kiếm" ng-change="changeMaLop()" />
+        </div>
+
+        <div ng-hide="!mLopHoc.Id">
+          <div class="thong-tin-truong">
+            <div>
+              <label>Lớp hiện tại</label><span style="width: 60%">{{mLopHoc.Ten}}</span>
+            </div>
+            <div><label style="width: 90px">Giáo viên</label><span></span></div>
+            <div><label>Trường</label><span>{{mLopHoc.TruongHoc}}</span></div>
+            <div><label></label><span>&nbsp; {{mLopHoc.PhongGD}}</span></div>
+          </div>
+
+          <div class="form-group">
+            <label>Họ tên học sinh</label>
+            <input class="form-control" placeholder="Nhập tên học sinh" ng-model="mData.HoTenHocSinh" />
+          </div>
+
+          <div class="form-group">
+            <label>Ngày sinh</label>
+            <input class="form-control" placeholder="Ngày sinh" ng-model="mData.NgaySinh" ui-mask="99/99/9999"
+              placeholder="DD/MM/YYYY" />
+          </div>
+
+          <div class="form-group">
+            <label>Họ tên phụ huynh <span style="color: red">(*)</span></label>
+            <input class="form-control" placeholder="Họ tên phụ huynh" ng-model="mData.HoTenPhuHuynh" />
+          </div>
+
+          <div class="form-group">
+            <label>Số điện thoại <span style="color: red">(*)</span></label>
+            <input class="form-control" placeholder="Số điện thoại liên hệ" ng-model="mData.DienThoai" />
+          </div>
+
+          <div class="form-group">
+            <label>Địa chỉ email</label>
+            <input class="form-control" placeholder="Địa chỉ email" ng-model="mData.Email" />
+          </div>
+          <div _ngcontent-rjl-c91="" class="text-thong-bao">
+            Lưu ý các trường
+            <a _ngcontent-rjl-c91="" style="color: red">(*)</a> là bắt buộc
+          </div>
+
+          <div class="text-center">
+            <a class="main-button btn-md btn-chonlop" ng-click="GetChienDichKhoiLop()">
+              Đặt sách ngay
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- POPUP -->
+<div class="modal fade" id="popupChonLopHoc">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Chọn lớp học</h4>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body" style="height: 75vh">
+        <!-- box chọn trường học -->
+        <div style="padding: 5px">
+          <div _ngcontent-vbr-c91="" class="box-vitri">
+            <h5>
+              <i class="fa fa-globe" aria-hidden="true"></i>
+
+              {{KhuVuc.DMTinhThanh.Ten}} {{KhuVuc.DMQuanHuyen.Ten ? (' - ' +
+              KhuVuc.DMQuanHuyen.Ten) : ''}}
+              <a class="badge badge-success" ng-click="ChangeStep(3)">Thay đổi</a>
+            </h5>
+          </div>
+        </div>
+        <!-- box chọn trường học -->
+        <div ng-show="location == 1" class="animated-box">
+          <div class="form-group">
+            <input class="form-control" placeholder="Tìm kiếm" ng-model="searchTruongHoc"
+              ng-model-options="{ debounce: 200 }" />
+          </div>
+
+          <main class="leaderboard__profiles">
+            <article class="leaderboard__profile" ng-repeat="item in DsTruongHoc | filter: searchTruongHoc"
+              ng-click="chonTruongHoc(item)">
+              <img src="/assets/truonghoc.png" class="leaderboard__picture" />
+              <span class="leaderboard__name" style="font-size: 14px">
+                {{item.Ten}}
+                <p style="
+                    margin: 0;
+                    font-size: 11.5px;
+                    color: rgb(138, 137, 135);
+                  ">
+                  {{item.QuanHuyen}} - {{item.TinhThanh}}
+                </p>
+              </span>
+            </article>
+          </main>
+        </div>
+
+        <!-- box chọn lớp học -->
+        <div ng-show="location == 2" class="animated-box">
+          <div class="form-group" style="display: flex; gap: 5px; align-items: baseline">
+            <a class="main-button btn-sm" style="width: 33%" ng-click="ChangeStep(1)">Quay lại
+            </a>
+            <input class="form-control" placeholder="Tìm kiếm" ng-model="searchLopHoc"
+              ng-model-options="{ debounce: 200 }" />
+          </div>
+
+          <main class="leaderboard__profiles">
+            <article class="leaderboard__profile" ng-repeat="item in DsLopHoc | filter: searchLopHoc"
+              ng-click="chonLopHoc(item)">
+              <img src="/assets/truonghoc.png" class="leaderboard__picture" />
+              <span class="leaderboard__name" style="font-size: 14px">
+                {{item.Ten}}
+              </span>
+            </article>
+          </main>
+        </div>
+
+        <!-- box chọn tỉnh thảnh -->
+        <div ng-show="location == 3" class="animated-box">
+          <div class="form-group">
+            <input class="form-control" placeholder="Tìm kiếm" ng-model="searchTinhThanh"
+              ng-model-options="{ debounce: 200 }" />
+          </div>
+
+          <main class="leaderboard__profiles">
+            <article class="leaderboard__profile" ng-repeat="item in DsCongTyPhatHanh | filter: searchTinhThanh"
+              ng-click="chonTinhThanh(item)">
+              <img src="/assets/map.png" class="leaderboard__picture" />
+              <span class="leaderboard__name">{{item.Ten}}</span>
+            </article>
+          </main>
+        </div>
+
+        <!-- box chọn quận huyện -->
+        <div ng-show="location == 4" class="animated-box">
+          <div class="form-group">
+            <input class="form-control" placeholder="Tìm kiếm" ng-model="searchQuanHuyen"
+              ng-model-options="{ debounce: 200 }" />
+          </div>
+          <main class="leaderboard__profiles">
+            <article class="leaderboard__profile" ng-repeat="item in DsQuanHuyen | filter: searchQuanHuyen"
+              ng-click="chonQuanHuyen(item)">
+              <img src="/assets/map.png" class="leaderboard__picture" />
+              <span class="leaderboard__name">{{item.Ten}}</span>
+            </article>
+          </main>
+        </div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <a class="main-button btn-sm" data-dismiss="modal">Trở về </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- POPUP CHỌN BỘ SÁCH -->
+<div class="modal fade" id="popupChonBoSach" data-backdrop="static">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <div class="modal-title">
+
+          <div style="display: flex; justify-content: space-between;" ng-hide="order==2">
+            <div style="width: 50%;">
+              <div class="form-group" style="margin-bottom: 0;">
+                <input class="form-control" placeholder="Tìm kiếm..." style="height: auto;" ng-model="searchSach" />
+              </div>
+            </div>
+            <div class="soluong-all">
+              <button ng-click="changeTatCa(0)">-</button>
+              <input type="text" readonly value="tất cả" class="ng-untouched ng-pristine ng-valid"><button
+                ng-click="changeTatCa(1)" style="background: #00aecd; color: #fff;">+</button>
+            </div>
+            <i class="fa fa-times" data-dismiss="modal" aria-hidden="true"
+              style="font-size: 30px; color: rgb(231, 94, 94); cursor: pointer; padding: 0 10px;"></i>
+          </div>
+
+          <div ng-hide="order==1" style="display: flex; gap: 10px; align-items: center;">
+            <a class="main-button btn-sm" style="width: 100px; margin-bottom: 0;" ng-click="closeXacNhan()">Quay lại
+            </a>
+            <div style=" color: #2499bc;
+            font-family: Manrope;
+            font-size: 16px;
+            font-weight: 800;">XÁC NHẬN ĐẶT HÀNG</div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body" style="height: 75vh; padding: 2px;">
+        <div class="animated-box" style="height: 75vh; overflow-y: auto;" ng-hide="order==2">
+          <div class="box-dmsach" ng-repeat="bosach in mBoSach">
+            <div class="tieude">
+              <div class="tenloai"> {{bosach.TenLoai}} </div>
+              <div class="btn-arrow">
+                <div ng-click="changeBoSach(bosach, 0)"> giảm </div>
+                <div ng-click="changeBoSach(bosach, 1)"> thêm </div>
+              </div>
+            </div>
+            <div class="dmsach" ng-repeat="sach in bosach.DanhSachs | filter: searchSach">
+              <div class="hinhanh">
+                <img ng-src="{{sach.UrlHinhAnh | appUrl}}" onerror="this.src= '/assets/books.png'">
+              </div>
+              <div class="thongtin">
+                <div class="tensach"> {{sach.Ten}} </div>
+                <div class="dongia"> {{sach.GiaBan | tien}} </div>
+                <div class="soluong">
+                  <button ng-click="changeSach(sach, 0)">-</button>
+                  <input type="number" readonly ng-model="sach.SoLuong"
+                    class="ng-untouched ng-pristine ng-valid"><button ng-click="changeSach(sach, 1)">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- XÁC NHẬN -->
+        <div class="animated-box" style="height: 75vh; overflow-y: auto;" ng-hide="order==1">
+          <div class="thong-tin-truong" style="padding: 15px !important;">
+            <div><label style="width: 130px;">Phụ huynh</label><span>{{mData.HoTenPhuHuynh}}</span></div>
+            <div><label style="width: 130px;">Điện thoại</label><span>{{mData.DienThoai}}</span></div>
+            <div><label>Lớp</label><span>{{mLopHoc.Ten}}</span>
+            </div><!---->
+            <div><label>Trường</label><span>{{mLopHoc.TruongHoc}}</span></div>
+            <div><label></label><span>{{mLopHoc.PhongGD}}</span></div>
+          </div>
+
+          <div class="phuong-thuc-thanh-toan break-line">
+            <div style="font-size: 16px; font-weight: bold; margin-bottom: 12px;"> Chọn phương
+              thức thanh toán <a style="color: red;">(*)</a></div>
+            <div class="row {{mThongTin.IdPhuongThucThanhToan == item.Id ? 'active' : ''}}"
+              ng-repeat="item in DsPhuongThucThanhToan" ng-click="thayDoiPhuongThuc(item)">
+              <div style="width: 15%; text-align: center;"><img alt="" src="{{item.TenNgan}}"></div>
+              <div style="width: 85%;"><label>{{item.Ten}}</label>
+              </div>
+            </div>
+          </div>
+
+          <!--  -->
+          <div class="thanh-tien"> Tổng số tiền ({{mThongTin.SoLuong}} {{strDonVi}}) <span>{{mThongTin.TongTien |
+              tien}}</span></div>
+
+          <div class="list-san-pham">
+            <div class="body-cart"
+              style="background-color: #fff; margin-top: 0px; margin-bottom: 0; min-height: min-content; overflow: hidden auto; max-height: 350px;">
+              <div ng-repeat="bosach in mThongTin.SanPhamViews">
+                <div class="ten-loai">{{bosach.TenLoai}}</div>
+                <div class="sanpham" style="box-shadow: none; margin-bottom: 2px; border-radius: 0;"
+                  ng-repeat="sach in bosach.DanhSachs">
+                  <div style="width: 60px; margin: auto; text-align: center;"><img style="height: 40px;"
+                      ng-src="{{sach.UrlHinhAnh | appUrl}}" onerror="this.src= '/assets/books.png'">
+                  </div>
+
+                  <div style="width: 100%;">
+                    <h3 style="min-height: 15px; font-size: 12px; margin: 0; padding: 0;">{{sach.Ten}}</h3>
+                    <div class="soluong">
+                      <div style="font-size: 12px; width: 60%; text-align: left;"> {{sach.GiaBan | tien}} </div>
+                      <div style="width: 40%; font-size: 12px; color: #888888; padding-right: 20px;"> Số lượng
+                        <b>{{sach.SoLuong}}</b>
+                      </div>
+                    </div>
+                  </div>
+                </div><!---->
+              </div><!---->
+            </div>
+          </div>
+
+          <div class="dieu-khoan" style="font-size: 80%;"> Nhấn "<b style="color: red;">Đặt hàng</b>" đồng nghĩa với
+            việc bạn đã đồng ý tuân theo <a style="cursor: pointer;">Điều khoản Trung tâm sách.VN</a>. <br> Sau khi đặt
+            hàng
+            thành công đơn của bạn sẽ được gửi cho giáo viên chủ nhiệm. </div>
+        </div>
+
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer" style="padding: 0;">
+        <div slot="fixed"
+          style="height: 90px;background-color: #fff; width: 100%; padding: 0 0 15px 0; bottom: 0; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
+          <div style="display: flex;" ng-hide="order==2">
+            <div style="width: 60%;">
+              <div class="thong-tin-truong" style="padding-left: 10px;">
+                <div><label style="width: 200px;">Tổng tiền</label><span>{{mThongTin.TongTien | tien}} đồng</span></div>
+                <div><label style="width: 200px;">Số lượng</label><span>{{mThongTin.SoLuong}} {{strDonVi}}</span></div>
+              </div>
+            </div>
+            <div style="width: 40%; display: flex;"><ion-button expand="block"
+                class="main-button btn-md ios button button-block button-solid button-disabled ion-activatable ion-focusable hydrated"
+                ng-click="openXacNhan()" style="width: 80%; margin: auto;" aria-disabled="true"
+                ng-disabled="!mThongTin.SoLuong || mThongTin.SoLuong == 0"> Đặt sách</ion-button></div>
+          </div>
+
+          <!-- XÁC NHẬN -->
+          <div style="padding: 10px; text-align: center;" ng-hide="order==1">
+            <a class="main-button btn-md" style="width: 90%; margin: auto;" ng-click="HoanThanhDatSach()">ĐẶT HÀNG
+            </a>
+          </div>
+
+          <!-- <a class="main-button btn-sm" data-dismiss="modal">Trở về </a> -->
+        </div>
+      </div>
+    </div>
+  </div>

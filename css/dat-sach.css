@@ -1,0 +1,225 @@
+.box-dmsach {
+    color: #4b5563;
+    border: 1px solid rgba(0, 0, 0, .09);
+    margin-bottom: 10px;
+    font-family: Manrope;
+}
+
+.box-dmsach .tieude {
+    background-color: rgba(0, 0, 0, .02);
+    padding: 6px;
+    display: flex;
+    text-transform: uppercase;
+}
+
+.box-dmsach .tieude .tenloai {
+    color: #2499bc;
+    font-size: 15.5px;
+    font-weight: 600;
+    width: -webkit-fill-available;
+}
+
+.box-dmsach .tieude .btn-arrow {
+    width: 150px;
+    text-align: right;
+    display: flex;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.box-dmsach .tieude .btn-arrow div {
+    width: 50%;
+    text-align: center;
+    font-weight: 600;
+}
+
+.box-dmsach .tieude .btn-arrow div:hover {
+    color: #1f1e21;
+}
+
+.box-dmsach .dmsach {
+    display: flex;
+    margin: 5px 0;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0 0px 5px 5px;
+}
+
+.box-dmsach .dmsach .hinhanh {
+    width: 15%;
+    text-align: center;
+    margin: 3px 5px;
+}
+
+.box-dmsach .dmsach .hinhanh img {
+    height: 80px;
+}
+
+.box-dmsach .dmsach .thongtin {
+    width: 83%;
+    margin: 3px 5px;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 22px;
+}
+
+.box-dmsach .dmsach .thongtin .soluong {
+    font-size: 16px;
+    font-weight: 600;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    /* Chrome, Safari, Edge, Opera */
+    /* Firefox */
+}
+
+.box-dmsach .dmsach .thongtin .soluong button {
+    height: 35px;
+    width: 35px;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    font-family: inherit;
+    font-style: inherit;
+    font-variant: inherit;
+    line-height: 1;
+    text-transform: none;
+    cursor: pointer;
+}
+
+.box-dmsach .dmsach .thongtin .soluong button:hover {
+    background-color: #d8d7d7;
+}
+
+.box-dmsach .dmsach .thongtin .soluong input {
+    width: 40px;
+    height: 35px;
+    outline: none;
+    border: none;
+    border-radius: 0;
+    text-align: center;
+    border-top: 1px solid #efefef;
+    border-bottom: 1px solid #efefef;
+}
+
+.box-dmsach .dmsach .thongtin .soluong input::-webkit-outer-spin-button,
+.box-dmsach .dmsach .thongtin .soluong input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.soluong-all {
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.soluong-all button {
+    height: 33px;
+    width: 35px;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    font-family: inherit;
+    font-style: inherit;
+    font-variant: inherit;
+    line-height: 1;
+    text-transform: none;
+    cursor: pointer;
+}
+
+.soluong-all input {
+    width: 55px;
+    height: 33px;
+    outline: none;
+    border: none;
+    font-size: 13px;
+
+    border-radius: 0;
+    text-align: center;
+    border-top: 1px solid #efefef;
+    border-bottom: 1px solid #efefef;
+}
+
+.phuong-thuc-thanh-toan,
+.thanh-tien {
+    padding: 10px;
+    line-height: 20px;
+    color: #2499bc;
+    font-weight: bold;
+    font-size: 15px;
+    font-family: Times New Roman, Times, serif;
+}
+.phuong-thuc-thanh-toan {
+    border-bottom: 1px solid #f6f6f6;
+}
+
+.phuong-thuc-thanh-toan .row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 5px;
+    border: 2px solid #fff;
+    min-height: 30px;
+}
+.thanh-tien span {
+    float: right;
+    font-weight: bold;
+    font-size: 19px;
+    color: rgb(211, 0, 0);
+}
+.phuong-thuc-thanh-toan .row img {
+    width: 70%;
+    margin: auto;
+    padding: 3px;
+}
+.phuong-thuc-thanh-toan .active {
+    border: 2px solid #84bd7a;
+}
+
+.dieu-khoan {
+    padding: 15px;
+    margin-bottom: 25px;
+}
+
+.body-cart {
+    background-color: #fff;
+    margin-top: 0px;
+    margin-bottom: 0;
+    min-height: min-content;
+    overflow: hidden auto;
+    max-height: 350px;
+}
+.body-cart .ten-loai {
+    background-color: rgba(0, 0, 0, .06);
+    margin-left: 12px;
+    padding: 3px 0;
+    display: inline-block;
+    text-transform: uppercase;
+}
+.body-cart .sanpham {
+    display: flex;
+    padding: 4px;
+    border-radius: 6px;
+    box-shadow: 0 1px rgba(174, 174, 174, .5);
+    position: relative;
+    margin-bottom: 12px;
+    box-shadow: none;
+    margin-bottom: 2px;
+    border-radius: 0;
+}
+.body-cart .sanpham .soluong {
+    padding: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    bottom: 2px;
+    right: 10px;
+    text-align: right;
+}

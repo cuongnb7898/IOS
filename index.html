@@ -1,0 +1,220 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Trung tâm sách</title>
+
+    <base href="/">
+    <meta name="color-scheme" content="light">
+    <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta property="og:site_name" content="Ứng dụng mô hình đặt bộ sách giáo khoa online">
+    <meta property="og:url" content="https://trungtamsach.vn" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Trung tâm sách" />
+    <meta property="og:description" content='Ứng dụng mô hình đặt bộ sách giáo khoa online' />
+    <meta property="og:image" content="https://trungtamsach.vn/img/thumbnail.jpg" />
+    <meta property="og:image:alt" content="Trung tâm sách - Ứng dụng mô hình đặt bộ sách giáo khoa online">
+
+    <!-- add to homescreen for ios -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <meta name="apple-mobile-web-app-title" content="Trung tâm sách">
+    <!-- ICONS -->
+    <link href="/icon/favicon.ico" type="image/x-icon" rel="shortcut icon">
+    <link rel="manifest" href="/manifest.json">
+
+
+    <!-- iOS icons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/icon/icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/icon/icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/icon/icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/icon/icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/icon/icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/icon/icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/icon/icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/icon/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icon/icon-180x180.png">
+
+    <!-- Android icons -->
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/icon/icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icon/icon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/icon/icon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icon/icon-16x16.png">
+
+    <link rel="mask-icon" href="/assets/icon/safari-pinned-tab.svg" color="#5bbad5">
+
+    <!-- Windows icons -->
+    <meta name="msapplication-TileImage" content="/assets/icon/icon-144x144.png">
+    <!-- Windows dock color -->
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <!-- Android dock color -->
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- STARTUP IMAGES - iOS only -->
+    <!-- iPad retina portrait startup image -->
+    <link href="/splash/splash-1536x2008.jpg"
+          media="(device-width: 768px) and (device-height: 1024px)
+                 and (-webkit-device-pixel-ratio: 2)
+                 and (orientation: portrait)"
+          rel="apple-touch-startup-image">
+
+    <!-- iPad retina landscape startup image -->
+    <link href="/splash/splash-1496x2048.jpg"
+          media="(device-width: 768px) and (device-height: 1024px)
+                 and (-webkit-device-pixel-ratio: 2)
+                 and (orientation: landscape)"
+          rel="apple-touch-startup-image">
+
+    <!-- iPad non-retina portrait startup image -->
+    <link href="/splash/splash-768x1004.jpg"
+          media="(device-width: 768px) and (device-height: 1024px)
+                 and (-webkit-device-pixel-ratio: 1)
+                 and (orientation: portrait)"
+          rel="apple-touch-startup-image">
+
+    <!-- iPad non-retina landscape startup image -->
+    <link href="/splash/splash-748x1024.jpg"
+          media="(device-width: 768px) and (device-height: 1024px)
+                 and (-webkit-device-pixel-ratio: 1)
+                 and (orientation: landscape)"
+          rel="apple-touch-startup-image">
+
+    <!-- iPhone 6 Plus portrait startup image -->
+    <link href="/splash/splash-1242x2148.jpg"
+          media="(device-width: 414px) and (device-height: 736px)
+                 and (-webkit-device-pixel-ratio: 3)
+                 and (orientation: portrait)"
+          rel="apple-touch-startup-image">
+
+    <!-- iPhone 6 Plus landscape startup image -->
+    <link href="/splash/splash-1182x2208.jpg"
+          media="(device-width: 414px) and (device-height: 736px)
+                 and (-webkit-device-pixel-ratio: 3)
+                 and (orientation: landscape)"
+          rel="apple-touch-startup-image">
+
+    <!-- iPhone 6 startup image -->
+    <link href="/splash/splash-750x1294.jpg"
+          media="(device-width: 375px) and (device-height: 667px)
+                 and (-webkit-device-pixel-ratio: 2)"
+          rel="apple-touch-startup-image">
+
+    <!-- iPhone 5 startup image -->
+    <link href="/splash/splash-640x1096.jpg"
+          media="(device-width: 320px) and (device-height: 568px)
+                 and (-webkit-device-pixel-ratio: 2)"
+          rel="apple-touch-startup-image">
+
+    <!-- iPhone < 5 retina startup image -->
+    <link href="/splash/splash-640x920.jpg"
+          media="(device-width: 320px) and (device-height: 480px)
+                 and (-webkit-device-pixel-ratio: 2)"
+          rel="apple-touch-startup-image">
+
+    <!-- iPhone < 5 non-retina startup image -->
+    <link href="/splash/splash-320x460.jpg"
+          media="(device-width: 320px) and (device-height: 480px)
+                 and (-webkit-device-pixel-ratio: 1)"
+          rel="apple-touch-startup-image">
+
+    <link rel="stylesheet" href="https://cdn.trungtamsach.vn/css/animate.css">
+    <link rel="stylesheet" href="https://cdn.trungtamsach.vn/plugins/Admin/bootstrap.css" />
+    <link rel="stylesheet" href="https://cdn.trungtamsach.vn/plugins/font-awesome-4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdn.trungtamsach.vn/plugins/toastr/toastr.css" />
+    <link rel="stylesheet" href="https://cdn.trungtamsach.vn/plugins/ngprogress/ngProgress.css" />
+    <link rel="stylesheet" href="/css/style.css?v=20240810">
+
+</head>
+
+<body ng-app="uiApp">
+    <div id="wrapper">
+        <toaster-container toaster-options="{'close-button': true, 'position-class': 'toast-bottom-right'}"></toaster-container>
+        <div class="header">
+            <div class="show-mobile">
+                <div class="container">
+                    <div class="nav-left" style="width: 100%;justify-content: space-between;">
+                        <a href="/profile" class="btn-menu"><img class="" src="/assets/home/Group 2343.png" /></a>
+                        <a href="/" class="btn-logo"><img src="/assets/home/Group 2268.png" /></a>
+                        <div style="width: 70px;">
+                            <a href="/profile" class="btn-menu"><img class="avatar" src="/assets/avatar-demo.png" /></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="gv-desktop">
+                <div class="container">
+                    <div class="nav-left">
+                        <a href="/" class="btn-logo"><img src="/assets/home/Group 2268.png" /></a>
+                        <a href="/" class="btn-menu active" ng-class="$state.current.title == 'home'">GIỚI THIỆU</a>
+                        <a href="/dat-sach" class="btn-menu" ng-class="$state.current.title == 'datsach'">ĐẶT SÁCH</a>
+                    </div>
+                    <div class="nav-right">
+                        <a href="/lich-su" class="btn-menu"><img src="/assets/cart.png" /></a>
+                        <a href="/profile" class="btn-menu"><img class="avatar" src="/assets/avatar-demo.png" /></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="page-wrapper">
+            <div ui-view=""></div>
+        </div>
+        <div ng-include="'/partials/rootFooter.html'"></div>
+    </div>
+    <div id="loader"></div>
+    <div id="loader-progress">
+        <div class="spinner-icon"></div>
+        <div class="spinner-icon-2"></div>
+        <p>
+            Vui lòng chờ trong giây lát
+        </p>
+    </div>
+
+    <!-- Mainly scripts -->
+    <script type="text/javascript" src="https://cdn.trungtamsach.vn/plugins/Admin/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="https://cdn.trungtamsach.vn/plugins/Admin/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdn.trungtamsach.vn/plugins/Admin/jquery.ba-bbq.js"></script>
+    <script type="text/javascript" src="https://cdn.trungtamsach.vn/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="https://cdn.trungtamsach.vn/plugins/jquery.jkey.js"></script>
+    <script type="text/javascript" src="https://cdn.trungtamsach.vn/plugins/moment/moment.js"></script>
+    <script type="text/javascript" src="https://cdn.trungtamsach.vn/plugins/underscore/underscore.js"></script>
+    <script type="text/javascript" src="https://cdn.trungtamsach.vn/plugins/slimscroll/jquery.slimscroll.min.js" "></script>
+    <script type="text/javascript" src="https://cdn.trungtamsach.vn/plugins/Admin/library.js"></script>
+
+    <!-- jQuery UI -->
+    <!-- Load angular, angular libraries -->
+    <script type="text/javascript" src="https://cdn.trungtamsach.vn/plugins/angular/angular.js"></script>
+    <script type="text/javascript" src="https://cdn.trungtamsach.vn/plugins/angular-animate/angular-animate.js"></script>
+    <script type="text/javascript" src="https://cdn.trungtamsach.vn/plugins/angular-resource/angular-resource.js"></script>
+    <script type="text/javascript" src="https://cdn.trungtamsach.vn/plugins/angular-sanitize/angular-sanitize.js"></script>
+    <script type="text/javascript" src="https://cdn.trungtamsach.vn/plugins/angular-ui-router/angular-ui-router.js"></script>
+    <script type="text/javascript" src="https://cdn.trungtamsach.vn/plugins/ngprogress/build/ngprogress.js"></script>
+    <script type="text/javascript" src="https://cdn.trungtamsach.vn/plugins/AngularJS-Toaster/toaster.js"></script>
+    <script type="text/javascript" src="https://cdn.trungtamsach.vn/plugins/angular-touch/angular-touch.js"></script>
+    <script type="text/javascript" src="https://cdn.trungtamsach.vn/plugins/angular-hotkeys/build/hotkeys.js"></script>
+
+
+    <script>
+        const _version = '20240810';
+        const _apicd = 'https://canhdieu.trungtamsach.vn/';
+        const _urlcdn = 'https://cdn.trungtamsach.vn/';
+        var baseUrlApi = '';
+        // Minimalize menu when screen is less than 768px
+        $(window).bind("load resize", function () {
+            if ($(this).width() < 768) {
+                $('body').addClass('body-small');
+            } else {
+                $('body').removeClass('body-small');
+            }
+        });
+    </script>
+    <!-- Load angular module, app -->
+    <script type="text/javascript" src="/js/app.constants.js?v=20240810"></script>
+    <script type="text/javascript" src="/js/app.module.js?v=20240810"></script>
+    <script type="text/javascript" src="/js/app.services.js?v=20240810"></script>
+    <script type="text/javascript" src="/js/app.controller.js?v=20240810"></script>
+</body>
+</html>

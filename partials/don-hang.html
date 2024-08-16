@@ -1,0 +1,113 @@
+﻿<link rel="stylesheet" href="/css/dat-sach.css">
+<style>
+    .info-donhang {
+        padding: 3px;
+        font-family: 'Manrope';
+        line-height: 23px;
+        font-size: 80%;
+
+
+    }
+
+    .info-donhang .title {
+        font-size: initial;
+        line-height: normal;
+        font-weight: 600;
+        margin: 0;
+        background: #eee;
+        padding: 2px 4px;
+        border-radius: 6px;
+        padding: 0;
+        margin: 7px 0;
+    }
+
+    .info-donhang .tieude {
+        padding: 6px;
+        display: flex;
+        text-transform: uppercase;
+    }
+
+    button {
+        outline: none !important;
+        border: none !important;
+    }
+
+    .box-message {
+        background: #e3ecea;
+        border-radius: 0 0 4px 4px;
+        padding: 3px;
+        position: relative;
+        padding: 10px;
+    }
+</style>
+
+<div class="bg-gray-web">
+    <div class="app-content bg-gray-web list-lich-su">
+        <div class="container-fluid page-profile  content-ls">
+            <div class="box-padding home-page app-content my-box mt-40">
+                <div style="background-color: #fff; width: 100%;">
+                    <div class="info-donhang">
+                        <div class="title">Thông tin đơn hàng</div>
+                        <div><b>Mã đơn: </b><a style="color: #2499BC;"><b>{{DonHang.MaDonHang}}</b></a></div>
+                        <div><b>Tổng tiền: </b><a><b>{{DonHang.TongTien | tien}} đồng</b></a></div>
+                        <div style="display: flex; justify-content: space-between;" ng-show="DonHang.Active && !DonHang.IsDaThanhToan" ng-click="huyDon()"><b>{{DonHang.ThanhToan}}</b> <button
+                                color="danger" size="small" class="btn btn2 btn-danger">
+                                Hủy đơn </button></div>
+                        <div class="title">Thông tin người mua</div>
+                        <div><b>Phụ huynh: </b>{{DonHang.TenPhuHuynh}} &nbsp; <ion-icon name="call-outline"
+                                aria-label="call outline" role="img" class="md hydrated"></ion-icon>
+                            &nbsp; <a href="tel:0342141241">{{DonHang.DienThoai}}</a></div>
+                        <div class="title">Thông tin người bán</div>
+                        <div><b>{{mCongTy.Ten}}</b></div>
+                        <div><b>Địa chỉ: </b> {{mCongTy.DiaChi}}</div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <div><b>Điện thoại: </b> {{mCongTy.Sdt}}</div>
+                            <div><b>Email: </b> {{mCongTy.Email}}</div>
+                        </div>
+                    </div><!---->
+                    <div class="box-message" ng-if="DonHang.Id">
+                        <div class="line"></div>
+                        <div class="message" style="margin-bottom: 5px; color: #2499BC;"> <b> {{DonHang.IsDaThanhToan ?
+                                'Đã thanh toán' : (!DonHang.Active ? 'Đã hủy' : 'Chưa thanh toán')}}</b>
+                            <i class="fa fa-check" aria-hidden="true" ng-show="DonHang.IsDaThanhToan"
+                                style="font-size: 18px; color: green;"></i>
+                        </div>
+                        <div class="description" ng-if="!DonHang.IsDaThanhToan && DonHang.Active && EIdLoaiThanhToan.VMNPay == item.IdPhuongThucThanhToan"><!----><a
+                                style="    color: #2499BC;"><button size="small" tabindex="0"
+                                    class="btn btn2 btn-primary">
+                                    Thanh toán ngay </button></a><!----><!----></div>
+                    </div><!----><br>
+                    <div style="font-size: 13px; font-weight: 600; text-align: center; padding-bottom: 10px;">
+                        {{DonHang.TenChienDich}}</div>
+                </div>
+                <div class="list-san-pham">
+                    <div class="body-cart"
+                        style="background-color: #fff; margin-top: 0px; margin-bottom: 0; min-height: min-content; overflow: hidden auto; max-height: 350px;">
+                        <div ng-repeat="bosach in DonHang.SanPhamViews">
+                            <div class="ten-loai">{{bosach.TenLoai}}</div>
+                            <div class="sanpham" style="box-shadow: none; margin-bottom: 2px; border-radius: 0;"
+                                ng-repeat="sach in bosach.DanhSachs">
+                                <div style="width: 60px; margin: auto; text-align: center;"><img style="height: 40px;"
+                                        ng-src="{{sach.UrlHinhAnh | appUrl}}" onerror="this.src= '/assets/books.png'">
+                                </div>
+                                <div style="width: 100%;">
+                                    <h3 style="min-height: 15px; font-size: 12px; margin: 0; padding: 0;">{{sach.Ten}}
+                                    </h3>
+                                    <div class="soluong">
+                                        <div style="font-size: 12px; width: 60%; text-align: left;"> {{sach.GiaBan |
+                                            tien}} </div>
+                                        <div style="width: 40%; font-size: 12px; color: #888888; padding-right: 20px;">
+                                            Số lượng
+                                            <b>{{sach.SoLuong}}</b>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!---->
+                        </div><!---->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

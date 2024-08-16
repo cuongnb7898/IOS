@@ -1,0 +1,28 @@
+<div class="bg-gray-web">
+    <div class="app-content bg-gray-web">
+        <div class="container-fluid page-profile">
+            <div class="row">
+                <div class="col-md-3 col-sm-4 sidebar bg-light">
+                    <h4 class="sidebar-title">Ứng dụng</h4>
+                    <div class="list-group">
+                        <a class="list-group-item list-group-item-action" ui-sref="lich-su">
+                            <i class="fa fa-book"></i> Lịch sử đặt sách
+                        </a>
+                        <a class="list-group-item list-group-item-action" ui-sref="gioi-thieu({ id: item.url })"  ng-repeat="item in DanhSachGioiThieu">
+                            <i class="fa fa-ellipsis-h"></i> {{item.TieuDe}}
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action">
+                            <i class="fa fa-ellipsis-h"></i> Xem thêm
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action">
+                            <i class="fa fa-newspaper-o"></i> Bản tin
+                        </a>
+                        <a href="/" class="list-group-item list-group-item-action">
+                            <i class="fa fa-home"></i> Trang chủ
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

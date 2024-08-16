@@ -1,0 +1,209 @@
+﻿<style>
+    .shopping-cart {
+        border-top: 1px solid #E7E7E7;
+        border-bottom: 1px solid #E7E7E7;
+        padding: 15px 5px;
+    }
+
+    .shopping-cart .text-info {
+        width: 120px;
+        display: inline-block;
+    }
+
+    .list-lich-su .trang-thai {
+        text-align: right;
+        font-weight: 500;
+        font-family: "Manrope";
+        padding: 3px 10px;
+    }
+
+    .list-lich-su .da-hoan-thanh {
+        color: #0b44be;
+    }
+
+    .list-lich-su .dang-xu-ly {
+        color: green;
+    }
+
+    .list-lich-su .da-huy {
+        color: #ce0d0d;
+    }
+
+    .list-lich-su .line {
+        border-bottom: 1px solid #dfdbdb;
+    }
+
+    .row-sp {
+        padding: 5px;
+        line-height: 25px;
+    }
+
+    .row-sp h4 {
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .row-sp p {
+        margin: 0;
+        padding: 0;
+    }
+
+    .row-sp .right-sp {
+        font-size: 13px;
+        font-weight: 600;
+        text-align: right;
+    }
+
+    .tool-bar {
+        display: flex;
+        padding: 0 20px;
+    }
+
+    .tool-bar>div {
+        text-align: center;
+        padding: 10px 5px 5px;
+        border-top-left-radius: 13px;
+        border-top-right-radius: 13px;
+        width: 25%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tool-bar>div ion-icon {
+        font-size: 33px;
+    }
+
+    .tool-bar>div .func-name {
+        margin-top: 6px;
+        display: flex;
+        align-items: center;
+        color: #2499bc;
+        text-align: center;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .tool-bar>div.active {
+        background: #f5f2f2;
+    }
+
+    .content-ls {
+        padding: 12px;
+        border-radius: 10px;
+        min-height: 50vh;
+    }
+
+    .content-ls .line {
+        border-bottom: 1px solid #dfdbdb;
+    }
+
+    .content-ls .box-donhang {
+        font-size: 13.7px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif !important;
+        line-height: 20px;
+        background-color: #fff;
+        padding: 7px;
+        border-radius: 5px;
+        margin-bottom: 12px;
+        border: 2px solid #E7E7E7;
+    }
+
+    .content-ls .box-donhang .tong-hop {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .content-ls .box-donhang .tong-hop .money {
+        color: red;
+    }
+
+    .content-ls .box-donhang .ghi-chu {
+        color: #767676;
+        font-style: italic;
+        margin-bottom: 5px;
+    }
+
+    .content-ls .box-donhang .chi-tiet {
+        padding: 10px 0;
+        text-align: center;
+        border: #f5f2f2 2px solid;
+        margin-bottom: 5px;
+        cursor: pointer;
+    }
+
+    .content-ls .box-donhang .chi-tiet:hover {
+        background-color: #f7f6f6;
+    }
+
+    .content-ls .box-donhang .trang-thai {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 5px 0;
+        color: rgb(15, 100, 15);
+        margin-top: 5px;
+        font-size: 15px;
+    }
+
+    .content-ls .box-donhang .trang-thai .text-danger {
+        color: red;
+    }
+
+    .box-lich-su {
+        padding: 20px 20px 10px 20px;
+        display: flex;
+        align-items: flex-end;
+        gap: 10px;
+    }
+</style>
+
+<div class="bg-gray-web">
+    <div class="app-content bg-gray-web list-lich-su">
+        <div class="container-fluid page-profile  content-ls">
+            <div>
+                <div class="form-group">
+                    <label>Số điện thoại</label>
+                    <input class="form-control" placeholder="Nhập số điện thoại" ng-model="mHocSinh.DienThoai"
+                        ng-change="getBySDT()" />
+                </div>
+            </div>
+
+            <div class="box-donhang" ng-repeat="item in DsDonHang">
+                <div> Mã đơn: <b style="color: #2499BC;">{{item.MaDonHang}}</b>
+                </div>
+                <div> Người đặt: {{item.TenPhuHuynh}} </div>
+                <div> Ngày đặt: {{item.NgayTao | date: 'HH:mm dd/MM/yyyy'}} </div>
+                <div> {{item.ThanhToan}}</div>
+                <div class="chi-tiet" tabindex="0" ng-click="xemChiTiet(item)"> Xem chi tiết </div>
+                <div style="text-align: right;">
+                    <div class="tong-hop">
+                        <span> Số lượng <b style="color: #2499BC;">{{item.TongSoSach | tien}}</b></span> Tổng <span> <b
+                                style="color: #2499BC;">{{item.TongTien |
+                                tien}} đồng</b></span>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: center;">
+                    <div class="trang-thai" style="width: 85%;">
+                        <div style="display: flex; align-items: center; gap: 10px;"
+                            class="{{!item.Active ? 'text-danger' : ''}}">
+                            {{ !item.Active ? 'Đã hủy' : (item.IsDaThanhToan ? 'Đã thanh toán' : 'Chưa thanh toán' )}}
+
+
+                            <span class="badge badge-success"
+                                ng-show="!item.IsDaThanhToan && EIdLoaiThanhToan.VMNPay == item.IdPhuongThucThanhToan && item.Active"
+                                style="background: #17a2b8; cursor: pointer;" ng-click="ChuyenHuongPage(item)">Thanh
+                                toán
+                                ngay</span>
+
+                            <i class="fa fa-check" aria-hidden="true" ng-show="item.IsDaThanhToan"
+                                style="font-size: 18px; color: green;"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

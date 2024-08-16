@@ -1,0 +1,236 @@
+﻿<div class="carousel slide auto-play" id="carousel2">
+  <ol class="carousel-indicators">
+    <li
+      data-slide-to="{{$index}}"
+      ng-class="{'active': $first}"
+      data-target="#carousel2"
+      ng-repeat="o in ListBanner"
+    ></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="item" ng-repeat="o in ListBanner" ng-class="{'active': $first}">
+      <div class="img-banner">
+        <img class="gv-desktop" ng-src="{{o.UrlHinhAnh | appUrl}}" />
+        <img class="show-mobile" ng-src="{{o.UrlHinhAnhApp | appUrl}}" />
+      </div>
+    </div>
+  </div>
+  <span
+    data-slide="prev"
+    href="#carousel2"
+    class="left carousel-control"
+    style="cursor: pointer"
+  >
+    <span class="icon-prev"></span>
+  </span>
+  <span
+    data-slide="next"
+    href="#carousel2"
+    class="right carousel-control"
+    style="cursor: pointer"
+  >
+    <span class="icon-next"></span>
+  </span>
+</div>
+<div class="home-page" style="background: none; width: 100% !important">
+  <div class="home-page-button">
+    <a class="main-button btn-lg btn-info" href="/dat-sach">
+      Bắt đầu đặt sách
+    </a>
+    <div class="show-mobile">
+      <a class="sign-in" href="/lich-su">Lịch sử đặt sách</a>
+    </div>
+  </div>
+</div>
+
+<div>
+  <div class="container-home">
+    <div class="bg-2">
+      <div class="tinh-nang-noi-bat">
+        <div class="img">
+          <img src="/assets/home/Group2333.png" alt />
+        </div>
+        <div class="content">
+          <div class="button">TÍNH NĂNG NỔI BẬT</div>
+          <div class="text">
+            <ul>
+              <li>
+                <img src="/assets/home/check.png" alt="" />Có hầu hết các đầu
+                sách của các bộ SGK
+              </li>
+              <li>
+                <img src="/assets/home/check.png" alt="" />Đặt sách thuận tiện
+                chỉ với vài thao tác đơn giản
+              </li>
+              <li>
+                <img src="/assets/home/check.png" alt="" />Có thể đặt mọi lúc
+                mọi nơi
+              </li>
+              <li>
+                <img src="/assets/home/check.png" alt="" />Dễ dàng quản lý các
+                đầu sách đã đặt
+              </li>
+              <li>
+                <img src="/assets/home/check.png" alt="" />Nhận sách trực tiếp
+                tại trường, lớp
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-2">
+      <div class="tinh-nang-noi-bat">
+        <div class="img">
+          <img src="/assets/home/Group2345.png" alt />
+        </div>
+        <div class="content">
+          <div class="button" style="color: #ffa344">CÂU HỎI THƯỜNG GẶP</div>
+          <div class="text">
+            <ul>
+              <li>
+                <img src="/assets/home/hoi-cham.png" alt="" />Làm thế nào để mua
+                sách
+              </li>
+              <li>
+                <img src="/assets/home/hoi-cham.png" alt="" />Làm thế nào để
+                thanh toán
+              </li>
+              <li>
+                <img src="/assets/home/hoi-cham.png" alt="" />Thời gian vận
+                chuyển bao lâu
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="gioi-thieu-he-thong">
+      <div class="content">
+        <div class="title">GIỚI THIỆU HỆ THỐNG</div>
+        <div class="header">
+          <div class="text">
+            Trung Tâm Sách (trungtamsach.vn) là lá cờ tiên phong trong việc xây
+            dựng ứng dụng mô hình đặt bộ sách giáo khoa online. Được thành lập
+            vào ngày 06/09/2023, ứng dụng Trung Tâm Sách được tạo nên nhằm đáp
+            ứng đầy đủ nhu cầu sử dụng sách của tất cả các em học sinh. Tại đây
+            có hầu hết các đầu sách giáo khoa và sản phẩm liên quan.
+
+            <br />
+            <br />
+            Ứng dụng Trung Tâm Sách được xây dựng liên kết theo một hệ thống
+            quản lý tới các trường, giáo viên và phụ huynh, giao diện sử dụng
+            phù hợp với mọi thiết bị nền tảng nên đảm bảo về tính tương tác. Ứng
+            dụng đặt sách bao gồm phần đặt sách và quản lý của phụ huynh học
+            sinh, và phần đăng nhập quản lý của giáo viên.
+          </div>
+          <div class="img-footer">
+            <img src="/assets/home/Frame.png" alt />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="thong-tin-lien-he">
+      <div class="title">THÔNG TIN LIÊN HỆ</div>
+      <div class="ten-cong-ty sm-hide">
+        Công ty TNHH đầu tư công nghệ HESTECH
+      </div>
+      <div class="components">
+        <div class="box dia-chi">
+          <img src="assets/home/dia-chi.png" alt="" />
+          <div class="title-box">Địa chỉ</div>
+          <div class="content">
+            Số 8, Ngõ 8A, Phố Vũ Thạnh, Ô Chợ Dừa, Đống Đa, Hà Nội
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="assets/home/dien-thoai.png" alt="" />
+          <div class="title-box">Số điện thoại</div>
+          <div class="content"><a href="tel:0888521816">0888.52.1816</a></div>
+        </div>
+
+        <div class="box">
+          <img src="assets/home/email.png" alt="" />
+          <div class="title-box">Địa chỉ email</div>
+          <div class="content" style="padding-left: 0; padding-right: 0">
+            <a href="mailTo:lienhe@trungtamsach.vn">lienhe@trungtamsach.vn</a>
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="assets/home/tai-nghe.png" alt="" />
+          <div class="title-box">Facebook</div>
+          <div class="content">
+            <a href="https://www.facebook.com/trungtamsach.vn/" target="_blank">
+              Trung tâm sách .VN
+            </a>
+          </div>
+        </div>
+        <div class="box">
+          <img src="assets/home/dien-thoai.png" alt="" />
+          <div class="title-box">Tổng đài hỗ trợ</div>
+          <div class="content"><a href="tel:0888521816">0888.52.1816</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .auto-play .img-banner {
+    border: 0;
+    background-color: #fff;
+    position: relative;
+    text-align: center;
+  }
+
+  .auto-play .img-banner img {
+    object-fit: fill;
+    width: 100%;
+  }
+
+  .auto-play .carousel-control {
+    background: none;
+  }
+
+  .auto-play .carousel-indicators {
+    bottom: -10px;
+  }
+
+  .carousel-indicators li {
+    margin: 1px 3px;
+  }
+  .carousel-indicators .active {
+    margin: 0px 2px;
+  }
+
+  .home-page-button {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 5px;
+    padding-top: 30px;
+    padding-bottom: 10px;
+  }
+
+  .main-button {
+    margin-bottom: 18px;
+  }
+
+  .sign-in {
+    margin: 0;
+    height: 39px;
+    font-family: "Quicksand";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 19px;
+    line-height: normal;
+    color: #00aecd;
+  }
+  .box-footer {
+    background: #ffffff;
+  }
+</style>
